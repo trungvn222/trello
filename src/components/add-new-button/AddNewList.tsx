@@ -12,10 +12,14 @@ function AddNewList({ title, onAddContent, order }: IAddNewListProps) {
 	const handleCloseForm = useCallback(() => {
 		setShowForm(false);
 	}, []);
-	const handleAddContent = useCallback((heading) => {
-		onAddContent(heading, order);
-		setShowForm(false);
-	}, []);
+	const handleAddContent = useCallback(
+		(heading) => {
+			console.log(order);
+			onAddContent(heading, order);
+			setShowForm(false);
+		},
+		[order],
+	);
 	const renderTextArea = () => {
 		if (!showForm) {
 			return null;
