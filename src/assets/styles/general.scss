@@ -1,0 +1,51 @@
+@import "./variables";
+@import "./mixin";
+
+html {
+	font-size: #{$font-size-root}px;
+}
+
+html,
+body {
+	font-family: $font_main;
+}
+
+.d-flex {
+	display: flex;
+}
+.justify-content-between {
+	justify-content: space-between;
+}
+.justify-content-center {
+	justify-content: center;
+}
+.align-items-center {
+	align-items: center;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font_main;
+	font-size: rem(12);
+}
+.post {
+	> *:first-child {
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+	> *:last-child {
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	body {
+		font-size: rem(13);
+	}
+}

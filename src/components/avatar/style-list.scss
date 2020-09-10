@@ -1,0 +1,76 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixin";
+
+.avatar-list {
+	$this: &;
+	&__number {
+		border-radius: 100%;
+		color: #fff;
+		background-color: #000;
+	}
+	&--small {
+		.avatar {
+			margin-left: rem(-12);
+		}
+		#{$this} {
+			&__number {
+				width: rem(24);
+				height: rem(24);
+				font-size: rem(8);
+				margin-left: rem(-12);
+			}
+		}
+	}
+	&--medium {
+		.avatar {
+			margin-left: rem(-15);
+		}
+		#{$this} {
+			&__number {
+				width: rem(30);
+				height: rem(30);
+				font-size: rem(10);
+				margin-left: rem(-15);
+			}
+		}
+	}
+
+	.avatar {
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.avatar-list {
+		$this: &;
+
+		&--small {
+			.avatar {
+				margin-left: rem(-15);
+			}
+			#{$this} {
+				&__number {
+					width: rem(30);
+					height: rem(30);
+					font-size: rem(10);
+					margin-left: rem(-15);
+				}
+			}
+		}
+		&--medium {
+			.avatar {
+				margin-left: rem(-20);
+			}
+			#{$this} {
+				&__number {
+					width: rem(40);
+					height: rem(40);
+					font-size: rem(12);
+					margin-left: rem(-20);
+				}
+			}
+		}
+	}
+}

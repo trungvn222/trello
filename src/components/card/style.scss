@@ -1,0 +1,130 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixin";
+
+.card {
+	width: 100%;
+	padding: rem(15) rem(15);
+	background-color: $color-bg;
+	border-radius: rem(10);
+	&__thumb {
+		padding-top: percentage(170/256);
+		position: relative;
+		border-radius: rem(8);
+		margin-bottom: rem(10);
+		overflow: hidden;
+		img {
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__labels {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 rem(-4) 0 rem(-4);
+		.card-label {
+			margin-right: rem(4);
+			margin-left: rem(4);
+		}
+	}
+	&__title {
+		margin: rem(5) 0 0 0;
+		font-size: rem(14);
+		line-height: (21/14);
+		font-weight: $font-weight-regular;
+		color: $color-black;
+	}
+	&__content {
+		margin-top: rem(2);
+		color: rgba($color-black, 0.4);
+		font-size: rem(12);
+		line-height: (18/12);
+	}
+	&__edit {
+		opacity: 0;
+		cursor: pointer;
+	}
+	&:hover & {
+		&__edit {
+			opacity: 1;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: rem(30);
+		&__right {
+			color: rgba($color-black, 0.2);
+			font-size: rem(11.2);
+			&__item {
+				margin-left: rem(15);
+				&:first-child {
+					margin-left: 0px;
+				}
+			}
+		}
+	}
+}
+
+.card-label {
+	width: 40px;
+	height: 6px;
+	border-radius: 4px;
+}
+
+.trello-icon {
+	i {
+		font-size: 1.428em;
+	}
+}
+@media screen and (min-width: 992px) {
+	.card {
+		padding: rem(20) rem(20);
+		&__thumb {
+			padding-top: percentage(170/322);
+			margin-bottom: rem(16);
+		}
+		&__labels {
+			margin: 0 rem(-4) 0 rem(-4);
+			.card-label {
+				margin-right: rem(4);
+				margin-left: rem(4);
+			}
+		}
+		&__title {
+			margin: rem(7) 0 0 0;
+			font-size: rem(16);
+			line-height: (23/16);
+		}
+		&__content {
+			margin-top: rem(2);
+			font-size: rem(13);
+			line-height: (19/13);
+		}
+
+		&__footer {
+			margin-top: rem(30);
+			&__right {
+				font-size: rem(14);
+				&__item {
+					margin-left: rem(19);
+					&:first-child {
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	.card-label {
+		width: 60px;
+		height: 8px;
+		border-radius: 4px;
+	}
+}

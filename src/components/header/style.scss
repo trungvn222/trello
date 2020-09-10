@@ -1,0 +1,54 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixin";
+
+.header {
+	height: 54px;
+	border-bottom: 1px solid rgba(#000000, 0.1);
+	padding-left: rem(15);
+	padding-right: rem(15);
+	&__left {
+		margin-left: rem(-19);
+		margin-right: rem(-19);
+		&__item {
+			padding-left: rem(19);
+			padding-right: rem(19);
+		}
+	}
+}
+
+.logo {
+	font-size: rem(30);
+	line-height: 1;
+	display: none;
+	a {
+		display: block;
+		color: #251c15;
+		text-decoration: none !important;
+	}
+}
+.header-board {
+	.icon-trello-mark-blue {
+		font-size: rem(24);
+		margin-right: rem(5);
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.header {
+		height: 60px;
+		padding-left: rem(30);
+		padding-right: rem(30);
+		&__left {
+			margin-left: rem(-19);
+			margin-right: rem(-19);
+			&__item {
+				padding-left: rem(19);
+				padding-right: rem(19);
+				border-right: 1px solid rgba(#000000, 0.1);
+			}
+		}
+	}
+	.logo {
+		display: block;
+	}
+}

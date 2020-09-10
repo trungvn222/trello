@@ -1,0 +1,41 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixin";
+.trello-list {
+	width: rem(288);
+	display: inline-block;
+	vertical-align: top;
+	margin-right: rem(15);
+	white-space: normal;
+	&:last-child {
+		margin-right: 0px;
+	}
+	&__header {
+		height: rem(40);
+		display: flex;
+		align-items: center;
+		border-radius: rem(10);
+		padding: 0 rem(14);
+		background-color: $color-bg;
+		font-weight: $font-weight-medium;
+		font-size: rem(13);
+		.icon-dots {
+			font-size: rem(6);
+			color: #cdccca;
+		}
+	}
+	.card,
+	.add-new-btn {
+		margin-top: rem(10);
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.trello-list {
+		width: rem(362);
+		margin-right: rem(30);
+		&__header {
+			height: rem(50);
+			font-size: rem(16);
+		}
+	}
+}

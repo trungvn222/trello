@@ -1,0 +1,87 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixin";
+
+.dasboard-container {
+	padding: rem(15) rem(15);
+	overflow: hidden;
+	&__head {
+		margin: 0 0 rem(16) 0;
+	}
+}
+.lists-wrapper {
+	display: inline-block;
+	white-space: nowrap;
+}
+.heading {
+	margin: 0;
+	font-size: rem(26);
+	line-height: (39/26);
+	font-weight: $font-weight-medium;
+}
+
+.custom-scrollbar {
+	overflow-x: auto;
+	padding-bottom: 30px;
+
+	&::-webkit-scrollbar {
+		height: 14px;
+		width: 14px;
+	}
+	&::-webkit-scrollbar-button {
+		&:end {
+			&:increment {
+				background: transparent;
+				display: none;
+			}
+		}
+		&:start {
+			&:decrement {
+				background: transparent;
+				display: none;
+			}
+		}
+	}
+	&::-webkit-scrollbar-track-piece {
+		background: rgba(0, 0, 0, 0.06);
+		&:vertical {
+			&:start {
+				border-radius: 10px 10px 0 0;
+			}
+			&:end {
+				border-radius: 0 0 10px 10px;
+			}
+		}
+		&:horizontal {
+			&:start {
+				border-radius: 10px 0 0 10px;
+			}
+			&:end {
+				border-radius: 0 10px 10px 0;
+			}
+		}
+	}
+	&::-webkit-scrollbar-thumb {
+		&:horizontal {
+			background: #979797;
+			border-radius: 10px;
+			display: block;
+			height: 48px;
+		}
+		&:vertical {
+			background: rgba(9, 30, 66, 0.13);
+			border-radius: 10px;
+			display: block;
+			height: 48px;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.dasboard-container {
+		padding: rem(30) rem(30);
+		&__head {
+			$width: rem(182);
+			width: calc(100% - #{$width});
+		}
+	}
+}

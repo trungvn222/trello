@@ -1,0 +1,46 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixin";
+
+.add-new-btn {
+	$this: &;
+	border: 1px dashed rgba($color-black, 0.2);
+	border-radius: rem(10);
+	overflow: hidden;
+	position: relative;
+
+	&__inner {
+		height: 100%;
+	}
+	&__placeholder {
+		font-size: rem(16);
+		cursor: pointer;
+		height: 160px;
+	}
+	&--list {
+		width: rem(288);
+		display: inline-block;
+		vertical-align: top;
+		white-space: normal;
+		#{$this} {
+			&__placeholder {
+				height: 40px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.add-new-btn {
+		$this: &;
+
+		&--list {
+			width: rem(362);
+
+			#{$this} {
+				&__placeholder {
+					height: 50px;
+				}
+			}
+		}
+	}
+}
