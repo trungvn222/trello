@@ -11,8 +11,8 @@ function AvatarList({ size, number, images }: IAvatarListProps) {
 	});
 	return (
 		<div className={classes}>
-			{images.map((image) => {
-				return <Avatar image={image} size={size} />;
+			{images.map((image, index) => {
+				return <Avatar key={index} image={image} size={size} />;
 			})}
 			<div className="avatar-list__number d-flex align-items-center justify-content-center">
 				+{number}

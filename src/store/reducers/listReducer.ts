@@ -80,6 +80,7 @@ const listReducer = (
 	switch (action.type) {
 		case keys.GET_LISTS_SUCCESS: {
 			const { lists } = action.payload;
+
 			return [...lists];
 		}
 		case keys.ADD_LIST_SUCCESS: {
@@ -104,7 +105,7 @@ const listReducer = (
 		case keys.DRAG_HAPPENED: {
 			const { dragInfo } = action.payload;
 			const newState = [...state];
-
+			console.log(newState, dragInfo.type);
 			// dragging lists around
 			if (dragInfo.type === "list") {
 				const list = newState.splice(dragInfo.droppableIndexStart, 1);

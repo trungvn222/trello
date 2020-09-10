@@ -41,7 +41,7 @@ function Home() {
 	}, [lists]);
 
 	const handleDragEnd = useCallback((result: DropResult) => {
-		const { destination, source, draggableId } = result;
+		const { destination, source, draggableId, type } = result;
 		if (!destination) {
 			return;
 		}
@@ -53,7 +53,7 @@ function Home() {
 				droppableIndexStart: source.index,
 				droppableIndexEnd: destination.index,
 				draggableId: draggableId,
-				type: "list",
+				type: type,
 			}),
 		);
 	}, []);
